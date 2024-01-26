@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://b62avp2rlxbi"]
+
+[ext_resource type="Script" path="res://scenes/tricks/trick.gd" id="1_6c0ap"]
+[ext_resource type="Texture2D" uid="uid://dap2n2fomx6fn" path="res://assets/gfx/to_be_removed/trick.jpg" id="2_nktpm"]
+
+[node name="Trick" type="Node2D"]
+script = ExtResource("1_6c0ap")
+
+[node name="image" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_nktpm")
