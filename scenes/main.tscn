@@ -16,7 +16,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="background" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -27,10 +27,10 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 
-[node name="background" type="Sprite2D" parent="MarginContainer"]
+[node name="arena" type="Sprite2D" parent="background"]
 texture = ExtResource("1_a30xg")
 
-[node name="MarginContainer2" type="MarginContainer" parent="."]
+[node name="resources" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -40,26 +40,26 @@ offset_right = 20.0
 offset_bottom = 40.0
 grow_horizontal = 2
 
-[node name="scroll" type="Sprite2D" parent="MarginContainer2"]
+[node name="scroll" type="Sprite2D" parent="resources"]
 position = Vector2(0, 100)
 texture = ExtResource("2_mfnh2")
 
-[node name="poo" type="Sprite2D" parent="MarginContainer2"]
+[node name="poo" type="Sprite2D" parent="resources"]
 position = Vector2(-150, 100)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("3_ya72y")
 
-[node name="alien" type="Sprite2D" parent="MarginContainer2"]
+[node name="alien" type="Sprite2D" parent="resources"]
 position = Vector2(0, 100)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("4_wjgnb")
 
-[node name="sultan" type="Sprite2D" parent="MarginContainer2"]
+[node name="sultan" type="Sprite2D" parent="resources"]
 position = Vector2(150, 100)
 scale = Vector2(0.7, 0.697252)
 texture = ExtResource("5_0eyg8")
 
-[node name="MarginContainer3" type="MarginContainer" parent="."]
+[node name="trick" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -73,11 +73,11 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="trick" type="Sprite2D" parent="MarginContainer3"]
+[node name="trick" type="Sprite2D" parent="trick"]
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("6_4ixe7")
 
-[node name="MarginContainer4" type="MarginContainer" parent="."]
+[node name="kill" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -87,12 +87,12 @@ offset_right = 40.0
 offset_bottom = 20.0
 grow_vertical = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="MarginContainer4"]
+[node name="spear" type="Sprite2D" parent="kill"]
 position = Vector2(200, 0)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("7_hhwo4")
 
-[node name="MarginContainer5" type="MarginContainer" parent="."]
+[node name="gold" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -105,12 +105,12 @@ offset_bottom = 20.0
 grow_horizontal = 0
 grow_vertical = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="MarginContainer5"]
+[node name="gold" type="Sprite2D" parent="gold"]
 position = Vector2(-200, 0)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("3_ya72y")
 
-[node name="MarginContainer6" type="MarginContainer" parent="."]
+[node name="message" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -123,11 +123,11 @@ offset_right = 300.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="scroll2" type="Sprite2D" parent="MarginContainer6"]
+[node name="background" type="Sprite2D" parent="message"]
 position = Vector2(300, 100)
 texture = ExtResource("2_mfnh2")
 
-[node name="Label" type="Label" parent="MarginContainer6"]
+[node name="text" type="Label" parent="message"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Ale my nie znamy żadnych sztuczek"
