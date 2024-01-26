@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ds66drv1rdjwn"
-path="res://.godot/imported/spear.jpg-691a5f13119e44442eae3bad37cb44cb.ctex"
+uid="uid://cf836flx1gumi"
+path="res://.godot/imported/alien.jpg-85cc5060c968751461465b4439f35179.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/gfx/spear.jpg"
-dest_files=["res://.godot/imported/spear.jpg-691a5f13119e44442eae3bad37cb44cb.ctex"]
+source_file="res://assets/gfx/to_be_removed/alien.jpg"
+dest_files=["res://.godot/imported/alien.jpg-85cc5060c968751461465b4439f35179.ctex"]
 
 [params]
 

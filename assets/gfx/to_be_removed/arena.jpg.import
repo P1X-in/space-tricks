@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://udacoy2j0eq8"
-path="res://.godot/imported/sultan.jpg-788804b529817701bb5a6d6479d57288.ctex"
+uid="uid://dp3iedfr6pnpi"
+path="res://.godot/imported/arena.jpg-1ec0a7bac406fdf1daa8a4eb01564e2a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/gfx/sultan.jpg"
-dest_files=["res://.godot/imported/sultan.jpg-788804b529817701bb5a6d6479d57288.ctex"]
+source_file="res://assets/gfx/to_be_removed/arena.jpg"
+dest_files=["res://.godot/imported/arena.jpg-1ec0a7bac406fdf1daa8a4eb01564e2a.ctex"]
 
 [params]
 

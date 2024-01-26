@@ -1,12 +1,12 @@
 [gd_scene load_steps=8 format=3 uid="uid://bt0gie2shs6f6"]
 
-[ext_resource type="Texture2D" uid="uid://dp3iedfr6pnpi" path="res://assets/gfx/arena.jpg" id="1_a30xg"]
-[ext_resource type="Texture2D" uid="uid://watb5214eb0o" path="res://assets/gfx/scroll.webp" id="2_mfnh2"]
-[ext_resource type="Texture2D" uid="uid://bff4f03xha165" path="res://assets/gfx/poo.png" id="3_ya72y"]
-[ext_resource type="Texture2D" uid="uid://cf836flx1gumi" path="res://assets/gfx/alien.jpg" id="4_wjgnb"]
-[ext_resource type="Texture2D" uid="uid://udacoy2j0eq8" path="res://assets/gfx/sultan.jpg" id="5_0eyg8"]
-[ext_resource type="Texture2D" uid="uid://dap2n2fomx6fn" path="res://assets/gfx/trick.jpg" id="6_4ixe7"]
-[ext_resource type="Texture2D" uid="uid://ds66drv1rdjwn" path="res://assets/gfx/spear.jpg" id="7_hhwo4"]
+[ext_resource type="Texture2D" uid="uid://dp3iedfr6pnpi" path="res://assets/gfx/to_be_removed/arena.jpg" id="1_a30xg"]
+[ext_resource type="Texture2D" uid="uid://watb5214eb0o" path="res://assets/gfx/to_be_removed/scroll.webp" id="2_mfnh2"]
+[ext_resource type="Texture2D" uid="uid://bff4f03xha165" path="res://assets/gfx/to_be_removed/poo.png" id="3_ya72y"]
+[ext_resource type="Texture2D" uid="uid://cf836flx1gumi" path="res://assets/gfx/to_be_removed/alien.jpg" id="4_wjgnb"]
+[ext_resource type="Texture2D" uid="uid://udacoy2j0eq8" path="res://assets/gfx/to_be_removed/sultan.jpg" id="5_0eyg8"]
+[ext_resource type="Texture2D" uid="uid://dap2n2fomx6fn" path="res://assets/gfx/to_be_removed/trick.jpg" id="6_4ixe7"]
+[ext_resource type="Texture2D" uid="uid://ds66drv1rdjwn" path="res://assets/gfx/to_be_removed/spear.jpg" id="7_hhwo4"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
