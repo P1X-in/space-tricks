@@ -15,6 +15,7 @@ extends Control
 var tricks: Tricks = preload("res://scenes/tricks/tricks.gd").new()
 
 var current_trick: Node2D = null
+var previous_trick: Node2D = null
 var current_score: int = 0
 
 # Called when the node enters the scene tree for the first time.
@@ -37,7 +38,9 @@ func present_next_trick() -> void:
 		self.current_trick.reset_state()
 		self.trick_anchor.remove_child(self.current_trick)
 		self.current_trick.show()
-	self.current_trick = self.tricks.get_random_trick()
+		self.previous_trick = self.current_trick
+	while self.current_trick == self.previous_trick:
+		self.current_trick = self.tricks.get_random_trick()
 	self.trick_anchor.add_child(self.current_trick)
 	self.current_trick.trick()
 
