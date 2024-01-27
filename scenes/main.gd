@@ -34,7 +34,9 @@ func _input(event: InputEvent) -> void:
 
 func present_next_trick() -> void:
 	if self.current_trick != null:
+		self.current_trick.reset_state()
 		self.trick_anchor.remove_child(self.current_trick)
+		self.current_trick.show()
 	self.current_trick = self.tricks.get_random_trick()
 	self.trick_anchor.add_child(self.current_trick)
 	self.current_trick.trick()
@@ -51,11 +53,15 @@ func _on_gold_mouse_entered() -> void:
 
 
 func _on_kill_pressed() -> void:
-	self._turn_progress(self.current_trick.kill_outcome)
+	self._apply_resource_change(self.current_trick.kill_outcome)
+	self._increase_score()
+	$"board/animations".play("explode")
 
 
 func _on_gold_pressed() -> void:
-	self._turn_progress(self.current_trick.gold_outcome)
+	self._apply_resource_change(self.current_trick.gold_outcome)
+	self._increase_score()
+	$"board/animations".play("poo")
 
 
 func _on_mouse_exited() -> void:
@@ -109,3 +115,6 @@ func _try_again_pressed() -> void:
 func _quit_game() -> void:
 	self.get_tree().quit()
 
+
+func _hide_trick() -> void:
+	self.current_trick.hide()

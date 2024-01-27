@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ds66drv1rdjwn"
-path="res://.godot/imported/spear.jpg-116fe688ba0ed055d6522e864b099447.ctex"
+uid="uid://bhv674c6olu63"
+path="res://.godot/imported/explosion.png-a3067508e0927bb909181a2e4ddcb964.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/gfx/to_be_removed/spear.jpg"
-dest_files=["res://.godot/imported/spear.jpg-116fe688ba0ed055d6522e864b099447.ctex"]
+source_file="res://assets/gfx/ui/explosion.png"
+dest_files=["res://.godot/imported/explosion.png-a3067508e0927bb909181a2e4ddcb964.ctex"]
 
 [params]
 

@@ -77,7 +77,7 @@ _data = {
 }
 
 [node name="Tower" instance=ExtResource("1_w0trm")]
-messages = ["Potrzymaj mi piwo!", "Kiedy ty ostatnio myłeś nogi???"]
+messages = ["Potrzymaj mi piwo!", "Kiedy ty ostatnio myłeś nogi???", "Hyc o podłogę i kosmita bęc!"]
 
 [node name="Path2D" type="Path2D" parent="." index="0"]
 curve = SubResource("Curve2D_xdntm")
