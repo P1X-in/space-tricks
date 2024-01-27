@@ -1,0 +1,98 @@
+[gd_scene load_steps=13 format=3 uid="uid://dda6ykn7xexl6"]
+
+[ext_resource type="PackedScene" uid="uid://b62avp2rlxbi" path="res://scenes/tricks/trick.tscn" id="1_x711x"]
+[ext_resource type="Texture2D" uid="uid://cga7isvhmqtt3" path="res://assets/gfx/aliens/tekno_01.png" id="2_ng31w"]
+[ext_resource type="Texture2D" uid="uid://begoaqfljiig" path="res://assets/gfx/aliens/tekno_02.png" id="3_273y4"]
+[ext_resource type="Texture2D" uid="uid://kud1vthubhw3" path="res://assets/gfx/aliens/tekno_03.png" id="4_qtk54"]
+[ext_resource type="Texture2D" uid="uid://bwurmosjpau7q" path="res://assets/gfx/aliens/tekno_04.png" id="5_8huxw"]
+[ext_resource type="Texture2D" uid="uid://wkim38ejkavf" path="res://assets/gfx/aliens/speaker_01.png" id="6_d1qp2"]
+[ext_resource type="Texture2D" uid="uid://brqnbthgjd1v5" path="res://assets/gfx/aliens/speaker_02.png" id="7_ntj46"]
+[ext_resource type="Texture2D" uid="uid://cuo2rg7b8ah2t" path="res://assets/gfx/aliens/speaker_03.png" id="8_cm0aa"]
+
+[sub_resource type="Animation" id="Animation_o0ygd"]
+resource_name = "trick"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2fbpf"]
+_data = {
+"trick": SubResource("Animation_o0ygd")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dxx8y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_d1qp2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ntj46")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_cm0aa")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_giivj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ng31w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_273y4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qtk54")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_8huxw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[node name="Techno" instance=ExtResource("1_x711x")]
+gold_outcome = {
+"boredom": 3,
+"gold": -2,
+"happiness": -1
+}
+kill_outcome = {
+"boredom": -2,
+"gold": 1,
+"happiness": 3
+}
+messages = ["DISCO DISCO UUU UUU", "HARD BASS"]
+
+[node name="animations" type="AnimationPlayer" parent="." index="0"]
+libraries = {
+"": SubResource("AnimationLibrary_2fbpf")
+}
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." index="1"]
+position = Vector2(100, -30)
+sprite_frames = SubResource("SpriteFrames_dxx8y")
+autoplay = "default"
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="." index="2"]
+position = Vector2(200, -60)
+sprite_frames = SubResource("SpriteFrames_dxx8y")
+autoplay = "default"
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="." index="3"]
+position = Vector2(-100, -30)
+sprite_frames = SubResource("SpriteFrames_dxx8y")
+autoplay = "default"
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="." index="4"]
+position = Vector2(-200, -60)
+sprite_frames = SubResource("SpriteFrames_dxx8y")
+autoplay = "default"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="5"]
+position = Vector2(50, 0)
+sprite_frames = SubResource("SpriteFrames_giivj")
+autoplay = "default"
