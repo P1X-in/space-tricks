@@ -1,0 +1,97 @@
+[gd_scene load_steps=10 format=3 uid="uid://3janr5kxf2rf"]
+
+[ext_resource type="PackedScene" uid="uid://b62avp2rlxbi" path="res://scenes/tricks/trick.tscn" id="1_o1ph2"]
+[ext_resource type="Texture2D" uid="uid://cdioovq8srrv2" path="res://assets/gfx/aliens/telekineza1.png" id="2_yfamp"]
+[ext_resource type="Texture2D" uid="uid://bte6s2tlpecq8" path="res://assets/gfx/aliens/telekineza2.png" id="3_a8npb"]
+[ext_resource type="Texture2D" uid="uid://bt8b27so1wbk7" path="res://assets/gfx/aliens/hawajska.png" id="4_ns8q7"]
+
+[sub_resource type="Animation" id="Animation_pnbah"]
+resource_name = "trick"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Path2D/PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_hm21h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Path2D/PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fu2qw"]
+_data = {
+"RESET": SubResource("Animation_hm21h"),
+"trick": SubResource("Animation_pnbah")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iqpsg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_yfamp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_a8npb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="Curve2D" id="Curve2D_0omuh"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -345, 4, 0, 0, 0, 0, -248, -108, 0, 0, 0, 0, -148, -171, 0, 0, 0, 0, -56, -190, 0, 0, 0, 0, 8, -191, 0, 0, 0, 0, 147, -170, 0, 0, 0, 0, 262, -123, 0, 0, 0, 0, 361, 4, 0, 0, 0, 0, 301, 124, 0, 0, 0, 0, 167, 204, 0, 0, 0, 0, -4, 206, 0, 0, 0, 0, -160, 189, 0, 0, 0, 0, -258, 141, 0, 0, 0, 0, -351, 14)
+}
+point_count = 14
+
+[node name="Pizza" instance=ExtResource("1_o1ph2")]
+gold_outcome = {
+"boredom": 2,
+"gold": -3,
+"happiness": 2
+}
+kill_outcome = {
+"boredom": -2,
+"gold": 3,
+"happiness": -2
+}
+messages = ["Średnia hawajska dla każdego!", "Na koszt Kosmicznej Floty!"]
+
+[node name="animations" type="AnimationPlayer" parent="." index="0"]
+libraries = {
+"": SubResource("AnimationLibrary_fu2qw")
+}
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = SubResource("SpriteFrames_iqpsg")
+autoplay = "default"
+
+[node name="Path2D" type="Path2D" parent="." index="2"]
+curve = SubResource("Curve2D_0omuh")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" index="0"]
+position = Vector2(-345, 4)
+rotates = false
+
+[node name="Sprite2D" type="Sprite2D" parent="Path2D/PathFollow2D" index="0"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_ns8q7")
