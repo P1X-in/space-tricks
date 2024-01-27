@@ -65,6 +65,7 @@ func change_resource(value: int) -> void:
 		self.add_resource(value)
 
 func show_hint(value: int) -> void:
+	self.clear_hint()
 	if value <= -3:
 		self.chevrons["down"][2].show()
 	if value <= -2:
