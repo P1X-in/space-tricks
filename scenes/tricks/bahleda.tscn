@@ -1,0 +1,109 @@
+[gd_scene load_steps=9 format=3 uid="uid://dp2km5pyvgje7"]
+
+[ext_resource type="PackedScene" uid="uid://b62avp2rlxbi" path="res://scenes/tricks/trick.tscn" id="1_8onvl"]
+[ext_resource type="Texture2D" uid="uid://ci8k22iswlomt" path="res://assets/gfx/aliens/bachleda1.png" id="2_bi58h"]
+[ext_resource type="Texture2D" uid="uid://bkguft77kyj0y" path="res://assets/gfx/aliens/bachleda2.png" id="3_u3rwr"]
+[ext_resource type="Texture2D" uid="uid://c0ff47spqrh7u" path="res://assets/gfx/aliens/koczkodan.png" id="4_hwjsj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ykym8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_bi58h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_u3rwr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="Animation" id="Animation_ek7n3"]
+resource_name = "trick"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:flip_h")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-300, -67), Vector2(300, -67), Vector2(-300, -67)]
+}
+
+[sub_resource type="Animation" id="Animation_pclj1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:flip_h")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-300, -67)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4w4vq"]
+_data = {
+"RESET": SubResource("Animation_pclj1"),
+"trick": SubResource("Animation_ek7n3")
+}
+
+[node name="Bahleda" instance=ExtResource("1_8onvl")]
+gold_outcome = {
+"boredom": 2,
+"gold": -1,
+"happiness": -1
+}
+kill_outcome = {
+"boredom": -2,
+"gold": 1,
+"happiness": 0
+}
+messages = ["Ujarzmianie koczkodana!", "Co za bestia!"]
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="0"]
+position = Vector2(-300, -67)
+texture = ExtResource("4_hwjsj")
+flip_h = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = SubResource("SpriteFrames_ykym8")
+autoplay = "default"
+
+[node name="animations" type="AnimationPlayer" parent="." index="2"]
+libraries = {
+"": SubResource("AnimationLibrary_4w4vq")
+}
