@@ -1,0 +1,95 @@
+[gd_scene load_steps=7 format=3 uid="uid://bwhccfe5ck4bs"]
+
+[ext_resource type="PackedScene" uid="uid://b62avp2rlxbi" path="res://scenes/tricks/trick.tscn" id="1_4iujq"]
+[ext_resource type="Texture2D" uid="uid://bmbxk7fks7f5p" path="res://assets/gfx/aliens/alien1_4.png" id="2_yqn7k"]
+[ext_resource type="Texture2D" uid="uid://c0ff47spqrh7u" path="res://assets/gfx/aliens/koczkodan.png" id="3_75mxv"]
+
+[sub_resource type="Animation" id="Animation_7ih7o"]
+resource_name = "trick"
+length = 1.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pivot:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [-2.61799, 0.0, 2.0944, 0.0, -2.61799]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, true, true, false, false]
+}
+
+[sub_resource type="Animation" id="Animation_qtmw6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pivot:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-2.61799]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5f1av"]
+_data = {
+"RESET": SubResource("Animation_qtmw6"),
+"trick": SubResource("Animation_7ih7o")
+}
+
+[node name="Trick" instance=ExtResource("1_4iujq")]
+gold_outcome = {
+"boredom": 0,
+"gold": -2,
+"happiness": 3
+}
+kill_outcome = {
+"boredom": 1,
+"gold": 2,
+"happiness": -2
+}
+messages = ["Jak śmiesz?!", "Jestem bogiem!"]
+
+[node name="animations" type="AnimationPlayer" parent="." index="0"]
+libraries = {
+"": SubResource("AnimationLibrary_5f1av")
+}
+
+[node name="pivot" type="Node2D" parent="." index="1"]
+rotation = -2.61799
+
+[node name="Sprite2D2" type="Sprite2D" parent="pivot" index="0"]
+position = Vector2(0, -200)
+texture = ExtResource("2_yqn7k")
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="2"]
+texture = ExtResource("3_75mxv")
