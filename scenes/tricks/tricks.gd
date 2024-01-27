@@ -7,7 +7,8 @@ var tricks: Array = [
 	preload("res://scenes/tricks/loki.tscn").instantiate(),
 	preload("res://scenes/tricks/poo.tscn").instantiate(),
 	preload("res://scenes/tricks/hipnoza.tscn").instantiate(),
-	preload("res://scenes/tricks/techno.tscn").instantiate()
+	preload("res://scenes/tricks/techno.tscn").instantiate(),
+	preload("res://scenes/tricks/spear.tscn").instantiate()
 ]
 
 func get_random_trick() -> Node2D:

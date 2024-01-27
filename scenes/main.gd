@@ -45,6 +45,7 @@ func present_next_trick() -> void:
 	self.current_trick.trick()
 
 	self.message.set_text(self.current_trick.get_random_message())
+	self._on_mouse_exited()
 
 
 func _on_kill_mouse_entered() -> void:
