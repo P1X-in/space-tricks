@@ -76,6 +76,7 @@ func _on_gold_pressed() -> void:
 
 
 func _on_mouse_exited() -> void:
+	self.current_hover = ""
 	for resource: Node2D in self.resources.values():
 		resource.clear_hint()
 
