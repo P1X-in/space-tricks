@@ -30,6 +30,10 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		self._quit_game()
+	if event.is_action_pressed("ui_left"):
+		self._on_kill_pressed()
+	if event.is_action_pressed("ui_right"):
+		self._on_gold_pressed()
 	if event is InputEventKey and event.keycode == KEY_F:
 		self.get_window().mode = Window.MODE_EXCLUSIVE_FULLSCREEN
 
