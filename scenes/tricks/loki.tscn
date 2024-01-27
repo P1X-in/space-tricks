@@ -66,7 +66,7 @@ _data = {
 "trick": SubResource("Animation_7ih7o")
 }
 
-[node name="Trick" instance=ExtResource("1_4iujq")]
+[node name="Loki" instance=ExtResource("1_4iujq")]
 gold_outcome = {
 "boredom": 0,
 "gold": -2,

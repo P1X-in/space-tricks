@@ -85,8 +85,8 @@ messages = ["Potrzymaj mi piwo!", "Kiedy ty ostatnio myłeś nogi???", "Hyc o po
 curve = SubResource("Curve2D_xdntm")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D" index="0"]
-position = Vector2(-355, 0)
-rotation = 0.0454233
+position = Vector2(74.928, -1.50396)
+rotation = 1.4289
 
 [node name="alien1_1" parent="Path2D/PathFollow2D" index="0" instance=ExtResource("2_ycf44")]
 
@@ -94,8 +94,8 @@ rotation = 0.0454233
 curve = SubResource("Curve2D_rtx5i")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D2" index="0"]
-position = Vector2(374, 1)
-rotation = -3.12199
+position = Vector2(240.912, 8.74672)
+rotation = 1.23547
 
 [node name="alien1_3" parent="Path2D2/PathFollow2D" index="0" instance=ExtResource("3_dw2ir")]
 flip = true
