@@ -24,6 +24,12 @@ func _ready() -> void:
 	for resource: Node2D in self.resources.values():
 		resource.zero_reached.connect(self._game_over)
 		resource.max_reached.connect(self._game_over)
+		
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_cancel"):
+		self._quit_game()
+	if event is InputEventKey and event.keycode == KEY_F:
+		self.get_window().mode = Window.MODE_EXCLUSIVE_FULLSCREEN
 
 
 func present_next_trick() -> void:
@@ -95,4 +101,8 @@ func _try_again_pressed() -> void:
 	self.game_end.hide()
 	self.board.show()
 	self.present_next_trick()
+
+
+func _quit_game() -> void:
+	self.get_tree().quit()
 

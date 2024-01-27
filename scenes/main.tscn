@@ -211,6 +211,24 @@ grow_vertical = 2
 layout_mode = 2
 text = "TRY AGAIN"
 
+[node name="quit" type="MarginContainer" parent="end"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = 200.0
+offset_right = 100.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="quit" type="Button" parent="end/quit"]
+layout_mode = 2
+text = "QUIT"
+
 [connection signal="mouse_entered" from="board/kill/button" to="." method="_on_kill_mouse_entered"]
 [connection signal="mouse_exited" from="board/kill/button" to="." method="_on_mouse_exited"]
 [connection signal="pressed" from="board/kill/button" to="." method="_on_kill_pressed"]
@@ -218,6 +236,7 @@ text = "TRY AGAIN"
 [connection signal="mouse_exited" from="board/gold/button" to="." method="_on_mouse_exited"]
 [connection signal="pressed" from="board/gold/button" to="." method="_on_gold_pressed"]
 [connection signal="pressed" from="end/restart/restart" to="." method="_try_again_pressed"]
+[connection signal="pressed" from="end/quit/quit" to="." method="_quit_game"]
 
 [editable path="board/resources/gold"]
 [editable path="board/resources/happiness"]
