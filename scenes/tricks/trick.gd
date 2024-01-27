@@ -17,3 +17,9 @@ extends Node2D
 
 func get_random_message() -> String:
 	return self.messages[randi_range(0, self.messages.size() - 1)]
+	
+func trick() -> void:
+	$"animations".play("trick")
+	
+func reset_state() -> void:
+	$"animations".play("RESET")

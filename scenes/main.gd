@@ -37,6 +37,7 @@ func present_next_trick() -> void:
 		self.trick_anchor.remove_child(self.current_trick)
 	self.current_trick = self.tricks.get_random_trick()
 	self.trick_anchor.add_child(self.current_trick)
+	self.current_trick.trick()
 
 	self.message.set_text(self.current_trick.get_random_message())
 
@@ -79,8 +80,8 @@ func _turn_progress(change: Dictionary) -> void:
 
 
 func _set_score_label(new_score: int) -> void:
-	self.score_label.set_text("Score: " + str(new_score))
-	self.end_score_label.set_text("GAME OVER\nSCORE: " + str(new_score))
+	self.score_label.set_text("Wynik: " + str(new_score))
+	self.end_score_label.set_text("GAME OVER\nWYNIK: " + str(new_score))
 
 
 func _increase_score() -> void:
