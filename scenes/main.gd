@@ -17,6 +17,7 @@ var tricks: Tricks = preload("res://scenes/tricks/tricks.gd").new()
 var current_trick: Node2D = null
 var previous_trick: Node2D = null
 var current_score: int = 0
+var current_hover: String = ""
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -46,14 +47,20 @@ func present_next_trick() -> void:
 
 	self.message.set_text(self.current_trick.get_random_message())
 	self._on_mouse_exited()
+	if self.current_hover == "kill":
+		self._on_kill_mouse_entered()
+	if self.current_hover == "gold":
+		self._on_gold_mouse_entered()
 
 
 func _on_kill_mouse_entered() -> void:
 	self._show_resource_change(self.current_trick.kill_outcome)
+	self.current_hover = "kill"
 
 
 func _on_gold_mouse_entered() -> void:
 	self._show_resource_change(self.current_trick.gold_outcome)
+	self.current_hover = "gold"
 
 
 func _on_kill_pressed() -> void:
