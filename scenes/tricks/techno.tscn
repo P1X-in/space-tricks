@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dda6ykn7xexl6"]
+[gd_scene load_steps=14 format=3 uid="uid://dda6ykn7xexl6"]
 
 [ext_resource type="PackedScene" uid="uid://b62avp2rlxbi" path="res://scenes/tricks/trick.tscn" id="1_x711x"]
 [ext_resource type="Texture2D" uid="uid://cga7isvhmqtt3" path="res://assets/gfx/aliens/tekno_01.png" id="2_ng31w"]
@@ -12,8 +12,12 @@
 [sub_resource type="Animation" id="Animation_o0ygd"]
 resource_name = "trick"
 
+[sub_resource type="Animation" id="Animation_131qh"]
+resource_name = "RESET"
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2fbpf"]
 _data = {
+"RESET": SubResource("Animation_131qh"),
 "trick": SubResource("Animation_o0ygd")
 }
 
