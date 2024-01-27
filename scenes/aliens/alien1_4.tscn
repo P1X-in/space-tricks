@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://d4ab5oi6a5qxw"]
+
+[ext_resource type="PackedScene" uid="uid://copj3xrv8igk3" path="res://scenes/aliens/alien1.tscn" id="1_cjafg"]
+[ext_resource type="Texture2D" uid="uid://bmbxk7fks7f5p" path="res://assets/gfx/aliens/alien1_4.png" id="2_e1ukd"]
+
+[node name="alien1_4" instance=ExtResource("1_cjafg")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_e1ukd")

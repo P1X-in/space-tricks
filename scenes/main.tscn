@@ -1,13 +1,20 @@
-[gd_scene load_steps=9 format=3 uid="uid://bt0gie2shs6f6"]
+[gd_scene load_steps=16 format=3 uid="uid://bt0gie2shs6f6"]
 
-[ext_resource type="Texture2D" uid="uid://dp3iedfr6pnpi" path="res://assets/gfx/to_be_removed/arena.jpg" id="1_a30xg"]
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_df48w"]
+[ext_resource type="Texture2D" uid="uid://b0rgpsui1shh5" path="res://assets/gfx/arena_floor.png" id="2_bxvw6"]
 [ext_resource type="Texture2D" uid="uid://watb5214eb0o" path="res://assets/gfx/to_be_removed/scroll.webp" id="2_mfnh2"]
+[ext_resource type="Texture2D" uid="uid://d0liknq74uk5m" path="res://assets/gfx/arena.png" id="2_xkvvp"]
+[ext_resource type="Texture2D" uid="uid://0au4p6ntf6yt" path="res://assets/gfx/arena_row1.png" id="3_2vfwn"]
 [ext_resource type="Texture2D" uid="uid://bff4f03xha165" path="res://assets/gfx/to_be_removed/poo.png" id="3_ya72y"]
 [ext_resource type="Texture2D" uid="uid://cf836flx1gumi" path="res://assets/gfx/to_be_removed/alien.jpg" id="4_wjgnb"]
+[ext_resource type="Texture2D" uid="uid://d2ejj4k71gb55" path="res://assets/gfx/arena_row2.png" id="4_yu8bt"]
 [ext_resource type="Texture2D" uid="uid://udacoy2j0eq8" path="res://assets/gfx/to_be_removed/sultan.jpg" id="5_0eyg8"]
+[ext_resource type="PackedScene" uid="uid://copj3xrv8igk3" path="res://scenes/aliens/alien1.tscn" id="5_yvmkj"]
+[ext_resource type="PackedScene" uid="uid://d3xvus4a2oor" path="res://scenes/aliens/alien1_2.tscn" id="6_3hxrj"]
+[ext_resource type="PackedScene" uid="uid://dkn3whtca45lt" path="res://scenes/aliens/alien1_3.tscn" id="7_2ok8v"]
 [ext_resource type="Texture2D" uid="uid://ds66drv1rdjwn" path="res://assets/gfx/to_be_removed/spear.jpg" id="7_hhwo4"]
 [ext_resource type="PackedScene" uid="uid://ynkbs0sacl3o" path="res://scenes/elements/resource.tscn" id="7_k748r"]
+[ext_resource type="PackedScene" uid="uid://d4ab5oi6a5qxw" path="res://scenes/aliens/alien1_4.tscn" id="8_hxon2"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -29,22 +36,239 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 
-[node name="arena" type="Sprite2D" parent="background"]
-texture = ExtResource("1_a30xg")
+[node name="arena_row3" type="Sprite2D" parent="background"]
+texture = ExtResource("2_xkvvp")
+
+[node name="left" type="Node2D" parent="background/arena_row3"]
+position = Vector2(0, -230)
+
+[node name="alien1_1_1" parent="background/arena_row3/left" instance=ExtResource("5_yvmkj")]
+position = Vector2(-150, -200)
+bob = true
+
+[node name="alien1_3_1" parent="background/arena_row3/left" instance=ExtResource("7_2ok8v")]
+position = Vector2(-250, -150)
+bob = true
+
+[node name="alien1_4_0" parent="background/arena_row3/left" instance=ExtResource("8_hxon2")]
+position = Vector2(-350, -170)
+bob = true
+
+[node name="alien1_3_0" parent="background/arena_row3/left" instance=ExtResource("7_2ok8v")]
+position = Vector2(-450, -130)
+bob = true
+
+[node name="alien1_2_0" parent="background/arena_row3/left" instance=ExtResource("6_3hxrj")]
+position = Vector2(-550, -100)
+bob = true
+
+[node name="alien1_1_0" parent="background/arena_row3/left" instance=ExtResource("5_yvmkj")]
+position = Vector2(-600, -60)
+bob = true
+
+[node name="right" type="Node2D" parent="background/arena_row3"]
+position = Vector2(0, -230)
+
+[node name="alien1_3_0" parent="background/arena_row3/right" instance=ExtResource("7_2ok8v")]
+position = Vector2(140, -220)
+bob = true
+flip = true
+
+[node name="alien1_2_0" parent="background/arena_row3/right" instance=ExtResource("6_3hxrj")]
+position = Vector2(200, -200)
+bob = true
+flip = true
+
+[node name="alien1_3_1" parent="background/arena_row3/right" instance=ExtResource("7_2ok8v")]
+position = Vector2(330, -200)
+bob = true
+flip = true
+
+[node name="alien1_4_0" parent="background/arena_row3/right" instance=ExtResource("8_hxon2")]
+position = Vector2(250, -150)
+bob = true
+flip = true
+
+[node name="alien1_1_0" parent="background/arena_row3/right" instance=ExtResource("5_yvmkj")]
+position = Vector2(350, -130)
+bob = true
+flip = true
+
+[node name="alien1_2_1" parent="background/arena_row3/right" instance=ExtResource("6_3hxrj")]
+position = Vector2(450, -110)
+bob = true
+flip = true
+
+[node name="alien1_4_1" parent="background/arena_row3/right" instance=ExtResource("8_hxon2")]
+position = Vector2(550, -130)
+bob = true
+flip = true
+
+[node name="alien1_1_1" parent="background/arena_row3/right" instance=ExtResource("5_yvmkj")]
+position = Vector2(520, -90)
+bob = true
+flip = true
+
+[node name="arena_row2" type="Sprite2D" parent="background"]
+texture = ExtResource("4_yu8bt")
+
+[node name="left" type="Node2D" parent="background/arena_row2"]
+position = Vector2(0, -100)
+
+[node name="alien1_1_1" parent="background/arena_row2/left" instance=ExtResource("5_yvmkj")]
+position = Vector2(-150, -200)
+bob = true
+
+[node name="alien1_3_1" parent="background/arena_row2/left" instance=ExtResource("7_2ok8v")]
+position = Vector2(-250, -150)
+bob = true
+
+[node name="alien1_4_0" parent="background/arena_row2/left" instance=ExtResource("8_hxon2")]
+position = Vector2(-350, -170)
+bob = true
+
+[node name="alien1_3_0" parent="background/arena_row2/left" instance=ExtResource("7_2ok8v")]
+position = Vector2(-450, -130)
+bob = true
+
+[node name="alien1_2_0" parent="background/arena_row2/left" instance=ExtResource("6_3hxrj")]
+position = Vector2(-550, -100)
+bob = true
+
+[node name="alien1_1_0" parent="background/arena_row2/left" instance=ExtResource("5_yvmkj")]
+position = Vector2(-600, -60)
+bob = true
+
+[node name="right" type="Node2D" parent="background/arena_row2"]
+position = Vector2(0, -100)
+
+[node name="alien1_3_0" parent="background/arena_row2/right" instance=ExtResource("7_2ok8v")]
+position = Vector2(140, -220)
+bob = true
+flip = true
+
+[node name="alien1_2_0" parent="background/arena_row2/right" instance=ExtResource("6_3hxrj")]
+position = Vector2(200, -200)
+bob = true
+flip = true
+
+[node name="alien1_3_1" parent="background/arena_row2/right" instance=ExtResource("7_2ok8v")]
+position = Vector2(330, -200)
+bob = true
+flip = true
+
+[node name="alien1_4_0" parent="background/arena_row2/right" instance=ExtResource("8_hxon2")]
+position = Vector2(250, -150)
+bob = true
+flip = true
+
+[node name="alien1_1_0" parent="background/arena_row2/right" instance=ExtResource("5_yvmkj")]
+position = Vector2(350, -130)
+bob = true
+flip = true
+
+[node name="alien1_2_1" parent="background/arena_row2/right" instance=ExtResource("6_3hxrj")]
+position = Vector2(450, -110)
+bob = true
+flip = true
+
+[node name="alien1_4_1" parent="background/arena_row2/right" instance=ExtResource("8_hxon2")]
+position = Vector2(550, -130)
+bob = true
+flip = true
+
+[node name="alien1_1_1" parent="background/arena_row2/right" instance=ExtResource("5_yvmkj")]
+position = Vector2(520, -90)
+bob = true
+flip = true
+
+[node name="arena_row1" type="Sprite2D" parent="background"]
+texture = ExtResource("3_2vfwn")
+
+[node name="left" type="Node2D" parent="background/arena_row1"]
+
+[node name="alien1_1_1" parent="background/arena_row1/left" instance=ExtResource("5_yvmkj")]
+position = Vector2(-150, -200)
+bob = true
+
+[node name="alien1_3_1" parent="background/arena_row1/left" instance=ExtResource("7_2ok8v")]
+position = Vector2(-250, -150)
+bob = true
+
+[node name="alien1_4_0" parent="background/arena_row1/left" instance=ExtResource("8_hxon2")]
+position = Vector2(-350, -170)
+bob = true
+
+[node name="alien1_3_0" parent="background/arena_row1/left" instance=ExtResource("7_2ok8v")]
+position = Vector2(-450, -130)
+bob = true
+
+[node name="alien1_2_0" parent="background/arena_row1/left" instance=ExtResource("6_3hxrj")]
+position = Vector2(-550, -100)
+bob = true
+
+[node name="alien1_1_0" parent="background/arena_row1/left" instance=ExtResource("5_yvmkj")]
+position = Vector2(-600, -60)
+bob = true
+
+[node name="right" type="Node2D" parent="background/arena_row1"]
+
+[node name="alien1_3_0" parent="background/arena_row1/right" instance=ExtResource("7_2ok8v")]
+position = Vector2(140, -220)
+bob = true
+flip = true
+
+[node name="alien1_2_0" parent="background/arena_row1/right" instance=ExtResource("6_3hxrj")]
+position = Vector2(200, -200)
+bob = true
+flip = true
+
+[node name="alien1_3_1" parent="background/arena_row1/right" instance=ExtResource("7_2ok8v")]
+position = Vector2(330, -200)
+bob = true
+flip = true
+
+[node name="alien1_4_0" parent="background/arena_row1/right" instance=ExtResource("8_hxon2")]
+position = Vector2(250, -150)
+bob = true
+flip = true
+
+[node name="alien1_1_0" parent="background/arena_row1/right" instance=ExtResource("5_yvmkj")]
+position = Vector2(350, -130)
+bob = true
+flip = true
+
+[node name="alien1_2_1" parent="background/arena_row1/right" instance=ExtResource("6_3hxrj")]
+position = Vector2(450, -110)
+bob = true
+flip = true
+
+[node name="alien1_4_1" parent="background/arena_row1/right" instance=ExtResource("8_hxon2")]
+position = Vector2(550, -130)
+bob = true
+flip = true
+
+[node name="alien1_1_1" parent="background/arena_row1/right" instance=ExtResource("5_yvmkj")]
+position = Vector2(520, -90)
+bob = true
+flip = true
+
+[node name="arena_floor" type="Sprite2D" parent="background"]
+texture = ExtResource("2_bxvw6")
 
 [node name="board" type="Control" parent="."]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="resources" type="MarginContainer" parent="board"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 600.0
-offset_right = 640.0
-offset_bottom = 40.0
 grow_horizontal = 2
 
 [node name="scroll" type="Sprite2D" parent="board/resources"]
@@ -79,10 +303,8 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 600.0
-offset_top = 360.0
-offset_right = 640.0
-offset_bottom = 400.0
+offset_top = 100.0
+offset_bottom = 100.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -91,9 +313,9 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_top = 230.0
+offset_top = -150.0
 offset_right = 400.0
-offset_bottom = 530.0
+offset_bottom = 150.0
 grow_vertical = 2
 
 [node name="spear" type="Sprite2D" parent="board/kill"]
@@ -111,10 +333,9 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 840.0
-offset_top = 230.0
-offset_right = 1240.0
-offset_bottom = 530.0
+offset_left = -400.0
+offset_top = -150.0
+offset_bottom = 150.0
 grow_horizontal = 0
 grow_vertical = 2
 
@@ -133,10 +354,9 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 320.0
-offset_top = 560.0
-offset_right = 920.0
-offset_bottom = 760.0
+offset_left = -300.0
+offset_top = -200.0
+offset_right = 300.0
 grow_horizontal = 2
 grow_vertical = 0
 

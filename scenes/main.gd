@@ -98,6 +98,8 @@ func _game_over() -> void:
 func _try_again_pressed() -> void:
 	self.current_score = 0
 	self._set_score_label(0)
+	for resource: Node2D in self.resources.values():
+		resource.reset_value()
 	self.game_end.hide()
 	self.board.show()
 	self.present_next_trick()
