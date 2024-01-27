@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://ynkbs0sacl3o"]
+[gd_scene load_steps=6 format=3 uid="uid://ynkbs0sacl3o"]
 
 [ext_resource type="Script" path="res://scenes/elements/resource.gd" id="1_ay64k"]
 [ext_resource type="Texture2D" uid="uid://dich6oaty3kqu" path="res://assets/gfx/ui/sub_panel.png" id="2_cb443"]
-[ext_resource type="Texture2D" uid="uid://bvqtnd6k01sy4" path="res://assets/gfx/to_be_removed/chevron.png" id="2_vg0fc"]
 [ext_resource type="Texture2D" uid="uid://3kinm8tyygk7" path="res://assets/gfx/ui/sub_panel2.png" id="3_xc5i4"]
+[ext_resource type="Texture2D" uid="uid://cvqy21wp8hw8v" path="res://assets/gfx/ui/chevron_r.png" id="4_0yab3"]
+[ext_resource type="Texture2D" uid="uid://yincdeeavmq4" path="res://assets/gfx/ui/chevron_g.png" id="5_uowqd"]
 
 [node name="Resource" type="Node2D"]
 script = ExtResource("1_ay64k")
@@ -34,41 +35,35 @@ patch_margin_bottom = 16
 [node name="icon" type="Sprite2D" parent="."]
 
 [node name="chevrons" type="Node2D" parent="."]
-position = Vector2(0, 100)
+position = Vector2(0, 30)
 
 [node name="chevron_down0" type="Sprite2D" parent="chevrons"]
 visible = false
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("2_vg0fc")
+texture = ExtResource("4_0yab3")
 
 [node name="chevron_down1" type="Sprite2D" parent="chevrons"]
 visible = false
 position = Vector2(0, 10)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("2_vg0fc")
+texture = ExtResource("4_0yab3")
 
 [node name="chevron_down2" type="Sprite2D" parent="chevrons"]
 visible = false
 position = Vector2(0, 20)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("2_vg0fc")
+texture = ExtResource("4_0yab3")
 
 [node name="chevron_up0" type="Sprite2D" parent="chevrons"]
 visible = false
 rotation = 3.14159
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("2_vg0fc")
+texture = ExtResource("5_uowqd")
 
 [node name="chevron_up1" type="Sprite2D" parent="chevrons"]
 visible = false
 position = Vector2(0, 10)
 rotation = 3.14159
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("2_vg0fc")
+texture = ExtResource("5_uowqd")
 
 [node name="chevron_up2" type="Sprite2D" parent="chevrons"]
 visible = false
 position = Vector2(0, 20)
 rotation = 3.14159
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("2_vg0fc")
+texture = ExtResource("5_uowqd")

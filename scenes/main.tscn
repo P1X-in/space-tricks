@@ -1,17 +1,18 @@
-[gd_scene load_steps=17 format=3 uid="uid://bt0gie2shs6f6"]
+[gd_scene load_steps=18 format=3 uid="uid://bt0gie2shs6f6"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_df48w"]
 [ext_resource type="Texture2D" uid="uid://b0rgpsui1shh5" path="res://assets/gfx/arena/arena_floor.png" id="2_bxvw6"]
 [ext_resource type="Texture2D" uid="uid://d0liknq74uk5m" path="res://assets/gfx/arena/arena.png" id="2_xkvvp"]
 [ext_resource type="Texture2D" uid="uid://0au4p6ntf6yt" path="res://assets/gfx/arena/arena_row1.png" id="3_2vfwn"]
 [ext_resource type="Texture2D" uid="uid://d2ejj4k71gb55" path="res://assets/gfx/arena/arena_row2.png" id="4_yu8bt"]
-[ext_resource type="Texture2D" uid="uid://udacoy2j0eq8" path="res://assets/gfx/to_be_removed/sultan.jpg" id="5_0eyg8"]
 [ext_resource type="PackedScene" uid="uid://copj3xrv8igk3" path="res://scenes/aliens/alien1.tscn" id="5_yvmkj"]
 [ext_resource type="PackedScene" uid="uid://d3xvus4a2oor" path="res://scenes/aliens/alien1_2.tscn" id="6_3hxrj"]
 [ext_resource type="PackedScene" uid="uid://dkn3whtca45lt" path="res://scenes/aliens/alien1_3.tscn" id="7_2ok8v"]
 [ext_resource type="PackedScene" uid="uid://ynkbs0sacl3o" path="res://scenes/elements/resource.tscn" id="7_k748r"]
 [ext_resource type="PackedScene" uid="uid://d4ab5oi6a5qxw" path="res://scenes/aliens/alien1_4.tscn" id="8_hxon2"]
 [ext_resource type="Texture2D" uid="uid://c0m2e8ncc1yf3" path="res://assets/gfx/ui/alien.png" id="12_d2ijk"]
+[ext_resource type="Texture2D" uid="uid://b72wr2sy4sbi2" path="res://assets/gfx/ui/sultan.png" id="13_re8ta"]
+[ext_resource type="Texture2D" uid="uid://yincdeeavmq4" path="res://assets/gfx/ui/chevron_g.png" id="14_4vuwj"]
 [ext_resource type="Texture2D" uid="uid://bmmugsn5pb3gr" path="res://assets/gfx/ui/spear.png" id="16_58w7k"]
 [ext_resource type="Texture2D" uid="uid://dich6oaty3kqu" path="res://assets/gfx/ui/sub_panel.png" id="16_jsmmh"]
 [ext_resource type="Texture2D" uid="uid://c1x80ns50ssnh" path="res://assets/gfx/ui/poo.png" id="16_vcwqo"]
@@ -290,8 +291,17 @@ texture = ExtResource("12_d2ijk")
 position = Vector2(160, 100)
 
 [node name="icon" parent="board/resources/boredom" index="2"]
-scale = Vector2(0.7, 0.697252)
-texture = ExtResource("5_0eyg8")
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("13_re8ta")
+
+[node name="chevron_up0" parent="board/resources/boredom/chevrons" index="3"]
+texture = ExtResource("14_4vuwj")
+
+[node name="chevron_up1" parent="board/resources/boredom/chevrons" index="4"]
+texture = ExtResource("14_4vuwj")
+
+[node name="chevron_up2" parent="board/resources/boredom/chevrons" index="5"]
+texture = ExtResource("14_4vuwj")
 
 [node name="trick" type="MarginContainer" parent="board"]
 layout_mode = 1
