@@ -3,7 +3,7 @@ extends Node2D
 signal zero_reached
 signal max_reached
 
-@onready var bar: ColorRect = $"fill"
+@onready var bar: NinePatchRect = $"fill"
 @onready var chevrons: Dictionary = {
 	"up": {
 		0: $"chevrons/chevron_up0",

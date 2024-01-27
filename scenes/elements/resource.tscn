@@ -1,28 +1,35 @@
-[gd_scene load_steps=3 format=3 uid="uid://ynkbs0sacl3o"]
+[gd_scene load_steps=5 format=3 uid="uid://ynkbs0sacl3o"]
 
 [ext_resource type="Script" path="res://scenes/elements/resource.gd" id="1_ay64k"]
+[ext_resource type="Texture2D" uid="uid://dich6oaty3kqu" path="res://assets/gfx/ui/sub_panel.png" id="2_cb443"]
 [ext_resource type="Texture2D" uid="uid://bvqtnd6k01sy4" path="res://assets/gfx/to_be_removed/chevron.png" id="2_vg0fc"]
+[ext_resource type="Texture2D" uid="uid://3kinm8tyygk7" path="res://assets/gfx/ui/sub_panel2.png" id="3_xc5i4"]
 
 [node name="Resource" type="Node2D"]
 script = ExtResource("1_ay64k")
 
-[node name="background" type="ColorRect" parent="."]
+[node name="background" type="NinePatchRect" parent="."]
 offset_left = -75.0
 offset_top = -75.0
 offset_right = 75.0
 offset_bottom = 75.0
-color = Color(0.505882, 0.505882, 0.505882, 1)
+texture = ExtResource("2_cb443")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
 
-[node name="fill" type="ColorRect" parent="."]
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
+[node name="fill" type="NinePatchRect" parent="."]
 offset_left = 75.0
 offset_top = 75.0
 offset_right = 225.0
 offset_bottom = 150.0
-grow_vertical = 0
 rotation = 3.14159
+texture = ExtResource("3_xc5i4")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
 
 [node name="icon" type="Sprite2D" parent="."]
 

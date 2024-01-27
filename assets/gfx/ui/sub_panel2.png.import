@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0rgpsui1shh5"
-path="res://.godot/imported/arena_floor.png-89123a33f3f3412aedc79c3e8d2928c4.ctex"
+uid="uid://3kinm8tyygk7"
+path="res://.godot/imported/sub_panel2.png-0398316ac33cfdc9d827abd7badd0b42.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/gfx/arena_floor.png"
-dest_files=["res://.godot/imported/arena_floor.png-89123a33f3f3412aedc79c3e8d2928c4.ctex"]
+source_file="res://assets/gfx/ui/sub_panel2.png"
+dest_files=["res://.godot/imported/sub_panel2.png-0398316ac33cfdc9d827abd7badd0b42.ctex"]
 
 [params]
 

@@ -1,20 +1,21 @@
-[gd_scene load_steps=16 format=3 uid="uid://bt0gie2shs6f6"]
+[gd_scene load_steps=17 format=3 uid="uid://bt0gie2shs6f6"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_df48w"]
-[ext_resource type="Texture2D" uid="uid://b0rgpsui1shh5" path="res://assets/gfx/arena_floor.png" id="2_bxvw6"]
-[ext_resource type="Texture2D" uid="uid://watb5214eb0o" path="res://assets/gfx/to_be_removed/scroll.webp" id="2_mfnh2"]
-[ext_resource type="Texture2D" uid="uid://d0liknq74uk5m" path="res://assets/gfx/arena.png" id="2_xkvvp"]
-[ext_resource type="Texture2D" uid="uid://0au4p6ntf6yt" path="res://assets/gfx/arena_row1.png" id="3_2vfwn"]
-[ext_resource type="Texture2D" uid="uid://bff4f03xha165" path="res://assets/gfx/to_be_removed/poo.png" id="3_ya72y"]
-[ext_resource type="Texture2D" uid="uid://cf836flx1gumi" path="res://assets/gfx/to_be_removed/alien.jpg" id="4_wjgnb"]
-[ext_resource type="Texture2D" uid="uid://d2ejj4k71gb55" path="res://assets/gfx/arena_row2.png" id="4_yu8bt"]
+[ext_resource type="Texture2D" uid="uid://b0rgpsui1shh5" path="res://assets/gfx/arena/arena_floor.png" id="2_bxvw6"]
+[ext_resource type="Texture2D" uid="uid://d0liknq74uk5m" path="res://assets/gfx/arena/arena.png" id="2_xkvvp"]
+[ext_resource type="Texture2D" uid="uid://0au4p6ntf6yt" path="res://assets/gfx/arena/arena_row1.png" id="3_2vfwn"]
+[ext_resource type="Texture2D" uid="uid://d2ejj4k71gb55" path="res://assets/gfx/arena/arena_row2.png" id="4_yu8bt"]
 [ext_resource type="Texture2D" uid="uid://udacoy2j0eq8" path="res://assets/gfx/to_be_removed/sultan.jpg" id="5_0eyg8"]
 [ext_resource type="PackedScene" uid="uid://copj3xrv8igk3" path="res://scenes/aliens/alien1.tscn" id="5_yvmkj"]
 [ext_resource type="PackedScene" uid="uid://d3xvus4a2oor" path="res://scenes/aliens/alien1_2.tscn" id="6_3hxrj"]
 [ext_resource type="PackedScene" uid="uid://dkn3whtca45lt" path="res://scenes/aliens/alien1_3.tscn" id="7_2ok8v"]
-[ext_resource type="Texture2D" uid="uid://ds66drv1rdjwn" path="res://assets/gfx/to_be_removed/spear.jpg" id="7_hhwo4"]
 [ext_resource type="PackedScene" uid="uid://ynkbs0sacl3o" path="res://scenes/elements/resource.tscn" id="7_k748r"]
 [ext_resource type="PackedScene" uid="uid://d4ab5oi6a5qxw" path="res://scenes/aliens/alien1_4.tscn" id="8_hxon2"]
+[ext_resource type="Texture2D" uid="uid://c0m2e8ncc1yf3" path="res://assets/gfx/ui/alien.png" id="12_d2ijk"]
+[ext_resource type="Texture2D" uid="uid://bmmugsn5pb3gr" path="res://assets/gfx/ui/spear.png" id="16_58w7k"]
+[ext_resource type="Texture2D" uid="uid://dich6oaty3kqu" path="res://assets/gfx/ui/sub_panel.png" id="16_jsmmh"]
+[ext_resource type="Texture2D" uid="uid://c1x80ns50ssnh" path="res://assets/gfx/ui/poo.png" id="16_vcwqo"]
+[ext_resource type="Texture2D" uid="uid://3kinm8tyygk7" path="res://assets/gfx/ui/sub_panel2.png" id="17_ptoyv"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -271,26 +272,22 @@ anchor_left = 0.5
 anchor_right = 0.5
 grow_horizontal = 2
 
-[node name="scroll" type="Sprite2D" parent="board/resources"]
-position = Vector2(0, 100)
-texture = ExtResource("2_mfnh2")
-
 [node name="gold" parent="board/resources" instance=ExtResource("7_k748r")]
-position = Vector2(-150, 100)
+position = Vector2(-160, 100)
 
 [node name="icon" parent="board/resources/gold" index="2"]
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("3_ya72y")
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("16_vcwqo")
 
 [node name="happiness" parent="board/resources" instance=ExtResource("7_k748r")]
 position = Vector2(0, 100)
 
 [node name="icon" parent="board/resources/happiness" index="2"]
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("4_wjgnb")
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("12_d2ijk")
 
 [node name="boredom" parent="board/resources" instance=ExtResource("7_k748r")]
-position = Vector2(150, 100)
+position = Vector2(160, 100)
 
 [node name="icon" parent="board/resources/boredom" index="2"]
 scale = Vector2(0.7, 0.697252)
@@ -308,7 +305,7 @@ offset_bottom = 100.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="kill" type="MarginContainer" parent="board"]
+[node name="kill" type="Control" parent="board"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -318,15 +315,28 @@ offset_right = 400.0
 offset_bottom = 150.0
 grow_vertical = 2
 
+[node name="NinePatchRect" type="NinePatchRect" parent="board/kill"]
+layout_mode = 2
+offset_left = 100.0
+offset_top = 50.0
+offset_right = 300.0
+offset_bottom = 250.0
+texture = ExtResource("16_jsmmh")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
 [node name="spear" type="Sprite2D" parent="board/kill"]
 position = Vector2(200, 150)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("7_hhwo4")
+texture = ExtResource("16_58w7k")
 
 [node name="button" type="TextureButton" parent="board/kill"]
 layout_mode = 2
+offset_right = 400.0
+offset_bottom = 300.0
 
-[node name="gold" type="MarginContainer" parent="board"]
+[node name="gold" type="Control" parent="board"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -339,15 +349,28 @@ offset_bottom = 150.0
 grow_horizontal = 0
 grow_vertical = 2
 
+[node name="NinePatchRect" type="NinePatchRect" parent="board/gold"]
+layout_mode = 2
+offset_left = 100.0
+offset_top = 50.0
+offset_right = 300.0
+offset_bottom = 250.0
+texture = ExtResource("16_jsmmh")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
 [node name="gold" type="Sprite2D" parent="board/gold"]
 position = Vector2(200, 150)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("3_ya72y")
+texture = ExtResource("16_vcwqo")
 
 [node name="button" type="TextureButton" parent="board/gold"]
 layout_mode = 2
+offset_right = 400.0
+offset_bottom = 300.0
 
-[node name="message" type="MarginContainer" parent="board"]
+[node name="message" type="Control" parent="board"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -360,24 +383,51 @@ offset_right = 300.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="background" type="Sprite2D" parent="board/message"]
-position = Vector2(300, 100)
-texture = ExtResource("2_mfnh2")
+[node name="NinePatchRect" type="NinePatchRect" parent="board/message"]
+layout_mode = 2
+offset_top = 25.0
+offset_right = 600.0
+offset_bottom = 175.0
+texture = ExtResource("17_ptoyv")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
 
 [node name="text" type="Label" parent="board/message"]
 layout_mode = 2
+offset_top = 88.0
+offset_right = 600.0
+offset_bottom = 111.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
 text = "Ale my nie znamy żadnych sztuczek"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="score" type="MarginContainer" parent="board"]
-layout_mode = 0
+[node name="score" type="Control" parent="board"]
+anchors_preset = 0
 offset_right = 200.0
 offset_bottom = 100.0
 
+[node name="NinePatchRect" type="NinePatchRect" parent="board/score"]
+layout_mode = 2
+offset_left = 25.0
+offset_top = 25.0
+offset_right = 175.0
+offset_bottom = 75.0
+texture = ExtResource("17_ptoyv")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
 [node name="label" type="Label" parent="board/score"]
 layout_mode = 2
+offset_top = 38.0
+offset_right = 200.0
+offset_bottom = 61.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Score: 0"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -405,6 +455,14 @@ offset_bottom = 100.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="NinePatchRect" type="NinePatchRect" parent="end/score"]
+layout_mode = 2
+texture = ExtResource("17_ptoyv")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
 [node name="label" type="Label" parent="end/score"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
@@ -421,9 +479,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -100.0
-offset_top = 100.0
+offset_top = 125.0
 offset_right = 100.0
-offset_bottom = 150.0
+offset_bottom = 175.0
 grow_horizontal = 2
 grow_vertical = 2
 
