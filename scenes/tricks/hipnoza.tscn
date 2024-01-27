@@ -1,0 +1,72 @@
+[gd_scene load_steps=7 format=3 uid="uid://bhy3lerqgwtby"]
+
+[ext_resource type="PackedScene" uid="uid://b62avp2rlxbi" path="res://scenes/tricks/trick.tscn" id="1_a8xk4"]
+[ext_resource type="Texture2D" uid="uid://bii8bt12icid5" path="res://assets/gfx/aliens/alien2.png" id="2_qago7"]
+[ext_resource type="Texture2D" uid="uid://jxx8v3wacrdk" path="res://assets/gfx/aliens/alien2h.png" id="3_oh1nu"]
+
+[sub_resource type="Animation" id="Animation_nbqyd"]
+resource_name = "trick"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pivot:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [2.0944, 4.53786]
+}
+
+[sub_resource type="Animation" id="Animation_vfvnp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pivot:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.0944]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0yyya"]
+_data = {
+"RESET": SubResource("Animation_vfvnp"),
+"trick": SubResource("Animation_nbqyd")
+}
+
+[node name="Hipnoza" instance=ExtResource("1_a8xk4")]
+gold_outcome = {
+"boredom": -1,
+"gold": -3,
+"happiness": 3
+}
+kill_outcome = {
+"boredom": 1,
+"gold": 1,
+"happiness": -2
+}
+messages = ["HIPNOZA!", "Mój łeb..."]
+
+[node name="animations" type="AnimationPlayer" parent="." index="0"]
+libraries = {
+"": SubResource("AnimationLibrary_0yyya")
+}
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="1"]
+texture = ExtResource("2_qago7")
+
+[node name="pivot" type="Node2D" parent="." index="2"]
+position = Vector2(20, 20)
+rotation = 2.0944
+
+[node name="Sprite2D" type="Sprite2D" parent="pivot" index="0"]
+position = Vector2(-20, -15)
+texture = ExtResource("3_oh1nu")
