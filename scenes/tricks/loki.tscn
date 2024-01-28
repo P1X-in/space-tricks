@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://b62avp2rlxbi" path="res://scenes/tricks/trick.tscn" id="1_4iujq"]
 [ext_resource type="Texture2D" uid="uid://bmbxk7fks7f5p" path="res://assets/gfx/aliens/alien1_4.png" id="2_yqn7k"]
 [ext_resource type="Texture2D" uid="uid://c0ff47spqrh7u" path="res://assets/gfx/aliens/koczkodan.png" id="3_75mxv"]
-[ext_resource type="AudioStream" uid="uid://dq4ayxou0lug7" path="res://assets/sfx/tchorz.mp3" id="4_oslfa"]
+[ext_resource type="AudioStream" uid="uid://be2dwx2jyrnq3" path="res://assets/sfx/piwo.mp3" id="4_w0ie5"]
 
 [sub_resource type="Animation" id="Animation_qtmw6"]
 length = 0.001
@@ -96,4 +96,4 @@ texture = ExtResource("2_yqn7k")
 texture = ExtResource("3_75mxv")
 
 [node name="AudioStreamPlayer" parent="." index="3"]
-stream = ExtResource("4_oslfa")
+stream = ExtResource("4_w0ie5")
