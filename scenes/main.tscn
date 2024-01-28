@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://bmmugsn5pb3gr" path="res://assets/gfx/ui/spear.png" id="16_58w7k"]
 [ext_resource type="Texture2D" uid="uid://c1x80ns50ssnh" path="res://assets/gfx/ui/poo.png" id="16_vcwqo"]
 [ext_resource type="Texture2D" uid="uid://3kinm8tyygk7" path="res://assets/gfx/ui/sub_panel2.png" id="17_ptoyv"]
-[ext_resource type="AudioStream" uid="uid://b1t2ycuvbb83c" path="res://assets/sfx/soundtrack/soundtrack.mp3" id="17_v5knx"]
+[ext_resource type="AudioStream" uid="uid://lesbdjavi27g" path="res://assets/sfx/soundtrack/soundtrack.mp3" id="17_v5knx"]
 
 [sub_resource type="Animation" id="Animation_82580"]
 length = 0.001
@@ -717,7 +717,7 @@ text = "PODDAJĘ SIĘ"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("17_v5knx")
-volume_db = -20.0
+volume_db = -15.0
 autoplay = true
 
 [connection signal="mouse_entered" from="board/kill/button" to="." method="_on_kill_mouse_entered"]
