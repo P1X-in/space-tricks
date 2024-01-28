@@ -4,6 +4,7 @@ signal zero_reached(message: String)
 signal max_reached(message: String)
 
 @onready var bar: NinePatchRect = $"fill"
+@onready var bar2: ProgressBar = $"ProgressBar"
 @onready var chevrons: Dictionary = {
 	"up": {
 		0: $"chevrons/chevron_up0",
@@ -30,6 +31,7 @@ var current_value: int
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	self.current_value = self.starting_value
+	self.bar2.set_max(self.max_value)
 
 
 func reset_value() -> void:
@@ -41,7 +43,8 @@ func reset_value() -> void:
 func set_progress(value: int) -> void:
 	var normalised_value: int = clampi(value, 0, self.max_value)
 	self.bar.size.y = self.step * normalised_value
-
+	self.bar2.set_value(value)
+	
 
 func add_resource(value: int=1) -> void:
 	self.current_value += value

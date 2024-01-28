@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://ynkbs0sacl3o"]
+[gd_scene load_steps=7 format=3 uid="uid://ynkbs0sacl3o"]
 
 [ext_resource type="Script" path="res://scenes/elements/resource.gd" id="1_ay64k"]
 [ext_resource type="Texture2D" uid="uid://dich6oaty3kqu" path="res://assets/gfx/ui/sub_panel.png" id="2_cb443"]
 [ext_resource type="Texture2D" uid="uid://3kinm8tyygk7" path="res://assets/gfx/ui/sub_panel2.png" id="3_xc5i4"]
 [ext_resource type="Texture2D" uid="uid://cvqy21wp8hw8v" path="res://assets/gfx/ui/chevron_r.png" id="4_0yab3"]
 [ext_resource type="Texture2D" uid="uid://yincdeeavmq4" path="res://assets/gfx/ui/chevron_g.png" id="5_uowqd"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f8td0"]
+texture = ExtResource("3_xc5i4")
 
 [node name="Resource" type="Node2D"]
 script = ExtResource("1_ay64k")
@@ -21,6 +24,7 @@ patch_margin_right = 16
 patch_margin_bottom = 16
 
 [node name="fill" type="NinePatchRect" parent="."]
+visible = false
 offset_left = 75.0
 offset_top = 75.0
 offset_right = 225.0
@@ -31,6 +35,18 @@ patch_margin_left = 16
 patch_margin_top = 16
 patch_margin_right = 16
 patch_margin_bottom = 16
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = 45.0
+offset_top = 75.0
+offset_right = 195.0
+offset_bottom = 105.0
+rotation = -1.5708
+theme_override_styles/fill = SubResource("StyleBoxTexture_f8td0")
+max_value = 30.0
+step = 1.0
+value = 15.0
+show_percentage = false
 
 [node name="icon" type="Sprite2D" parent="."]
 

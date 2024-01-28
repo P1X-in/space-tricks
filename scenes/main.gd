@@ -50,7 +50,7 @@ func present_next_trick() -> void:
 	self.current_trick.trick()
 
 	self.message.set_text(self.current_trick.get_random_message())
-	self._on_mouse_exited()
+	
 	if self.current_hover == "kill":
 		self._on_kill_mouse_entered()
 	if self.current_hover == "gold":
@@ -71,12 +71,16 @@ func _on_kill_pressed() -> void:
 	self._apply_resource_change(self.current_trick.kill_outcome)
 	self._increase_score()
 	$"board/animations".play("explode")
+	for resource: Node2D in self.resources.values():
+		resource.clear_hint()
 
 
 func _on_gold_pressed() -> void:
 	self._apply_resource_change(self.current_trick.gold_outcome)
 	self._increase_score()
 	$"board/animations".play("poo")
+	for resource: Node2D in self.resources.values():
+		resource.clear_hint()
 
 
 func _on_mouse_exited() -> void:
