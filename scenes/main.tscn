@@ -447,6 +447,8 @@ grow_horizontal = 2
 
 [node name="gold" parent="board/resources" instance=ExtResource("7_k748r")]
 position = Vector2(-160, 100)
+zero_message = "Zbankrutowałeś!"
+max_message = "Ogarnęło Cię szaleństwo od nadmiaru bogactw!"
 
 [node name="icon" parent="board/resources/gold" index="2"]
 scale = Vector2(0.8, 0.8)
@@ -454,6 +456,8 @@ texture = ExtResource("16_vcwqo")
 
 [node name="happiness" parent="board/resources" instance=ExtResource("7_k748r")]
 position = Vector2(0, 100)
+zero_message = "Wściekły lud rozerwał Cię na strzępy!"
+max_message = "Rozentuzjazmowany lud przejął władzę!"
 
 [node name="icon" parent="board/resources/happiness" index="2"]
 scale = Vector2(0.8, 0.8)
@@ -461,6 +465,8 @@ texture = ExtResource("12_d2ijk")
 
 [node name="boredom" parent="board/resources" instance=ExtResource("7_k748r")]
 position = Vector2(160, 100)
+zero_message = "Sułtan umarł z nudów!"
+max_message = "Sułtan dostał zawału serca!"
 
 [node name="icon" parent="board/resources/boredom" index="2"]
 scale = Vector2(0.6, 0.6)

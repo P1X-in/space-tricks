@@ -1,7 +1,7 @@
 extends Node2D
 
-signal zero_reached
-signal max_reached
+signal zero_reached(message: String)
+signal max_reached(message: String)
 
 @onready var bar: NinePatchRect = $"fill"
 @onready var chevrons: Dictionary = {
@@ -16,6 +16,9 @@ signal max_reached
 		2: $"chevrons/chevron_down2"
 	}
 }
+
+@export var zero_message: String = ""
+@export var max_message: String = ""
 
 
 @export var starting_value: int = 15
@@ -46,7 +49,7 @@ func add_resource(value: int=1) -> void:
 		self.current_value = self.max_value
 	self.set_progress(self.current_value)
 	if self.current_value == self.max_value:
-		self.max_reached.emit()
+		self.max_reached.emit(self.max_message)
 
 
 func remove_resource(value: int=1) -> void:
@@ -55,7 +58,7 @@ func remove_resource(value: int=1) -> void:
 		self.current_value = 0
 	self.set_progress(self.current_value)
 	if self.current_value == 0:
-		self.zero_reached.emit()
+		self.zero_reached.emit(self.zero_message)
 
 
 func change_resource(value: int) -> void:

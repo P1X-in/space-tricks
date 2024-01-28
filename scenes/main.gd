@@ -103,7 +103,6 @@ func _turn_progress(change: Dictionary) -> void:
 
 func _set_score_label(new_score: int) -> void:
 	self.score_label.set_text("Wynik: " + str(new_score))
-	self.end_score_label.set_text("GAME OVER\nWYNIK: " + str(new_score))
 
 
 func _increase_score() -> void:
@@ -111,9 +110,10 @@ func _increase_score() -> void:
 	self._set_score_label(self.current_score)
 
 
-func _game_over() -> void:
+func _game_over(end_message: String) -> void:
 	if self.game_end.is_visible():
 		return
+	self.end_score_label.set_text(end_message + "\nWYNIK: " + str(self.current_score))
 	self.board.hide()
 	self.game_end.show()
 
