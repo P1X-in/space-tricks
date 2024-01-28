@@ -451,11 +451,6 @@ position = Vector2(-160, 100)
 zero_message = "Zbankrutowałeś!"
 max_message = "Ogarnęło Cię szaleństwo od nadmiaru bogactw!"
 
-[node name="ProgressBar" parent="board/resources/gold" index="2"]
-offset_left = -75.0
-offset_right = 75.0
-offset_bottom = 225.0
-
 [node name="icon" parent="board/resources/gold" index="3"]
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("16_vcwqo")
@@ -465,11 +460,6 @@ position = Vector2(0, 100)
 zero_message = "Wściekły lud rozerwał Cię na strzępy!"
 max_message = "Rozentuzjazmowany lud przejął władzę!"
 
-[node name="ProgressBar" parent="board/resources/happiness" index="2"]
-offset_left = -73.0
-offset_right = 77.0
-offset_bottom = 223.0
-
 [node name="icon" parent="board/resources/happiness" index="3"]
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("12_d2ijk")
@@ -478,11 +468,6 @@ texture = ExtResource("12_d2ijk")
 position = Vector2(160, 100)
 zero_message = "Sułtan umarł z nudów!"
 max_message = "Sułtan dostał zawału serca!"
-
-[node name="ProgressBar" parent="board/resources/boredom" index="2"]
-offset_left = -73.0
-offset_right = 77.0
-offset_bottom = 223.0
 
 [node name="icon" parent="board/resources/boredom" index="3"]
 scale = Vector2(0.6, 0.6)
