@@ -1,8 +1,36 @@
-[gd_scene load_steps=7 format=3 uid="uid://bwhccfe5ck4bs"]
+[gd_scene load_steps=8 format=3 uid="uid://bwhccfe5ck4bs"]
 
 [ext_resource type="PackedScene" uid="uid://b62avp2rlxbi" path="res://scenes/tricks/trick.tscn" id="1_4iujq"]
 [ext_resource type="Texture2D" uid="uid://bmbxk7fks7f5p" path="res://assets/gfx/aliens/alien1_4.png" id="2_yqn7k"]
 [ext_resource type="Texture2D" uid="uid://c0ff47spqrh7u" path="res://assets/gfx/aliens/koczkodan.png" id="3_75mxv"]
+[ext_resource type="AudioStream" uid="uid://dq4ayxou0lug7" path="res://assets/sfx/tchorz.mp3" id="4_oslfa"]
+
+[sub_resource type="Animation" id="Animation_qtmw6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pivot:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-2.61799]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_7ih7o"]
 resource_name = "trick"
@@ -31,33 +59,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
 "values": [false, true, true, false, false]
-}
-
-[sub_resource type="Animation" id="Animation_qtmw6"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("pivot:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [-2.61799]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:flip_h")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5f1av"]
@@ -93,3 +94,6 @@ texture = ExtResource("2_yqn7k")
 
 [node name="Sprite2D" type="Sprite2D" parent="." index="2"]
 texture = ExtResource("3_75mxv")
+
+[node name="AudioStreamPlayer" parent="." index="3"]
+stream = ExtResource("4_oslfa")

@@ -1,8 +1,24 @@
-[gd_scene load_steps=10 format=3 uid="uid://dnee1qxbl3v5w"]
+[gd_scene load_steps=11 format=3 uid="uid://dnee1qxbl3v5w"]
 
 [ext_resource type="PackedScene" uid="uid://b62avp2rlxbi" path="res://scenes/tricks/trick.tscn" id="1_mqr41"]
 [ext_resource type="Texture2D" uid="uid://2emspw7y2s5u" path="res://assets/gfx/aliens/alien1_3.png" id="2_1svuu"]
 [ext_resource type="Texture2D" uid="uid://daluexlff030s" path="res://assets/gfx/grenade.png" id="3_p1exn"]
+[ext_resource type="AudioStream" uid="uid://bhtcdk5na2dbb" path="res://assets/sfx/pileczka.mp3" id="4_7vjle"]
+
+[sub_resource type="Animation" id="Animation_p8ifp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pivot:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
 [sub_resource type="Animation" id="Animation_cn8y6"]
 resource_name = "trick"
@@ -20,12 +36,18 @@ tracks/0/keys = {
 "values": [0.0, 6.28319]
 }
 
-[sub_resource type="Animation" id="Animation_p8ifp"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5tky6"]
+_data = {
+"RESET": SubResource("Animation_p8ifp"),
+"trick": SubResource("Animation_cn8y6")
+}
+
+[sub_resource type="Animation" id="Animation_jsi8x"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("pivot:rotation")
+tracks/0/path = NodePath("pivot/Sprite2D:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -34,11 +56,29 @@ tracks/0/keys = {
 "update": 0,
 "values": [0.0]
 }
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_5tky6"]
-_data = {
-"RESET": SubResource("Animation_p8ifp"),
-"trick": SubResource("Animation_cn8y6")
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("pivot/Sprite2D2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("pivot/Sprite2D3:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
 }
 
 [sub_resource type="Animation" id="Animation_n8r35"]
@@ -80,45 +120,6 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 6.28319]
-}
-
-[sub_resource type="Animation" id="Animation_jsi8x"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("pivot/Sprite2D:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("pivot/Sprite2D2:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("pivot/Sprite2D3:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_i3f46"]
@@ -169,3 +170,6 @@ texture = ExtResource("3_p1exn")
 [node name="Sprite2D3" type="Sprite2D" parent="pivot" index="2"]
 position = Vector2(-95, 70)
 texture = ExtResource("3_p1exn")
+
+[node name="AudioStreamPlayer" parent="." index="4"]
+stream = ExtResource("4_7vjle")

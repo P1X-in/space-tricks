@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dda6ykn7xexl6"]
+[gd_scene load_steps=15 format=3 uid="uid://dda6ykn7xexl6"]
 
 [ext_resource type="PackedScene" uid="uid://b62avp2rlxbi" path="res://scenes/tricks/trick.tscn" id="1_x711x"]
 [ext_resource type="Texture2D" uid="uid://cga7isvhmqtt3" path="res://assets/gfx/aliens/tekno_01.png" id="2_ng31w"]
@@ -8,12 +8,13 @@
 [ext_resource type="Texture2D" uid="uid://wkim38ejkavf" path="res://assets/gfx/aliens/speaker_01.png" id="6_d1qp2"]
 [ext_resource type="Texture2D" uid="uid://brqnbthgjd1v5" path="res://assets/gfx/aliens/speaker_02.png" id="7_ntj46"]
 [ext_resource type="Texture2D" uid="uid://cuo2rg7b8ah2t" path="res://assets/gfx/aliens/speaker_03.png" id="8_cm0aa"]
-
-[sub_resource type="Animation" id="Animation_o0ygd"]
-resource_name = "trick"
+[ext_resource type="AudioStream" uid="uid://ct47kir7quxf2" path="res://assets/sfx/szubidubi.mp3" id="9_k10k7"]
 
 [sub_resource type="Animation" id="Animation_131qh"]
 resource_name = "RESET"
+
+[sub_resource type="Animation" id="Animation_o0ygd"]
+resource_name = "trick"
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2fbpf"]
 _data = {
@@ -100,3 +101,6 @@ autoplay = "default"
 position = Vector2(50, 0)
 sprite_frames = SubResource("SpriteFrames_giivj")
 autoplay = "default"
+
+[node name="AudioStreamPlayer" parent="." index="6"]
+stream = ExtResource("9_k10k7")

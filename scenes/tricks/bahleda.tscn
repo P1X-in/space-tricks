@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://dp2km5pyvgje7"]
+[gd_scene load_steps=10 format=3 uid="uid://dp2km5pyvgje7"]
 
 [ext_resource type="PackedScene" uid="uid://b62avp2rlxbi" path="res://scenes/tricks/trick.tscn" id="1_8onvl"]
-[ext_resource type="Texture2D" uid="uid://ci8k22iswlomt" path="res://assets/gfx/aliens/bachleda1.png" id="2_bi58h"]
-[ext_resource type="Texture2D" uid="uid://bkguft77kyj0y" path="res://assets/gfx/aliens/bachleda2.png" id="3_u3rwr"]
+[ext_resource type="Texture2D" uid="uid://crlhpvi7dcvt1" path="res://assets/gfx/aliens/bachleda1.png" id="2_bi58h"]
+[ext_resource type="Texture2D" uid="uid://dga2wi80t2sox" path="res://assets/gfx/aliens/bachleda2.png" id="3_u3rwr"]
 [ext_resource type="Texture2D" uid="uid://c0ff47spqrh7u" path="res://assets/gfx/aliens/koczkodan.png" id="4_hwjsj"]
+[ext_resource type="AudioStream" uid="uid://cntw23aj8saak" path="res://assets/sfx/hmmhm.mp3" id="5_kmhpb"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ykym8"]
 animations = [{
@@ -18,6 +19,33 @@ animations = [{
 "name": &"default",
 "speed": 2.0
 }]
+
+[sub_resource type="Animation" id="Animation_pclj1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:flip_h")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-300, -67)]
+}
 
 [sub_resource type="Animation" id="Animation_ek7n3"]
 resource_name = "trick"
@@ -46,33 +74,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(-300, -67), Vector2(300, -67), Vector2(-300, -67)]
-}
-
-[sub_resource type="Animation" id="Animation_pclj1"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:flip_h")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-300, -67)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4w4vq"]
@@ -107,3 +108,6 @@ autoplay = "default"
 libraries = {
 "": SubResource("AnimationLibrary_4w4vq")
 }
+
+[node name="AudioStreamPlayer" parent="." index="3"]
+stream = ExtResource("5_kmhpb")

@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://cqex8aqm77p"]
+[gd_scene load_steps=10 format=3 uid="uid://cqex8aqm77p"]
 
 [ext_resource type="PackedScene" uid="uid://b62avp2rlxbi" path="res://scenes/tricks/trick.tscn" id="1_w0trm"]
 [ext_resource type="PackedScene" uid="uid://copj3xrv8igk3" path="res://scenes/aliens/alien1.tscn" id="2_ycf44"]
 [ext_resource type="PackedScene" uid="uid://dkn3whtca45lt" path="res://scenes/aliens/alien1_3.tscn" id="3_dw2ir"]
+[ext_resource type="AudioStream" uid="uid://dff57yusislqm" path="res://assets/sfx/jeb_z_dzidy.mp3" id="4_8b8mr"]
 
 [sub_resource type="Curve2D" id="Curve2D_xdntm"]
 _data = {
@@ -15,6 +16,33 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 374, 1, 0, 0, 0, 0, 272, -1, 0, 0, 0, 0, 157, -19, 0, 0, 0, 0, 147, -99, 0, 0, 0, 0, 50, -116, 0, 0, 0, 0, 195, -123, 0, 0, 0, 0, 241, 9)
 }
 point_count = 7
+
+[sub_resource type="Animation" id="Animation_xeyyi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Path2D/PathFollow2D:progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Path2D2/PathFollow2D:progress")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
 [sub_resource type="Animation" id="Animation_pem5t"]
 resource_name = "trick"
@@ -45,33 +73,6 @@ tracks/1/keys = {
 "values": [0.0, 388.056, 388.06, 682.0, 682.0]
 }
 
-[sub_resource type="Animation" id="Animation_xeyyi"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Path2D/PathFollow2D:progress")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Path2D2/PathFollow2D:progress")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_amwbt"]
 _data = {
 "RESET": SubResource("Animation_xeyyi"),
@@ -85,8 +86,8 @@ messages = ["Potrzymaj mi piwo!", "Kiedy ty ostatnio myłeś nogi???", "Hyc o po
 curve = SubResource("Curve2D_xdntm")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D" index="0"]
-position = Vector2(74.928, -1.50396)
-rotation = 1.4289
+position = Vector2(-355, 0)
+rotation = 0.0454233
 
 [node name="alien1_1" parent="Path2D/PathFollow2D" index="0" instance=ExtResource("2_ycf44")]
 
@@ -94,8 +95,8 @@ rotation = 1.4289
 curve = SubResource("Curve2D_rtx5i")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D2" index="0"]
-position = Vector2(240.912, 8.74672)
-rotation = 1.23547
+position = Vector2(374, 1)
+rotation = -3.12199
 
 [node name="alien1_3" parent="Path2D2/PathFollow2D" index="0" instance=ExtResource("3_dw2ir")]
 flip = true
@@ -107,5 +108,8 @@ flip_v = true
 libraries = {
 "": SubResource("AnimationLibrary_amwbt")
 }
+
+[node name="AudioStreamPlayer" parent="." index="3"]
+stream = ExtResource("4_8b8mr")
 
 [editable path="Path2D2/PathFollow2D/alien1_3"]

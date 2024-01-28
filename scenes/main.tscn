@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bt0gie2shs6f6"]
+[gd_scene load_steps=22 format=3 uid="uid://bt0gie2shs6f6"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_df48w"]
 [ext_resource type="Texture2D" uid="uid://b0rgpsui1shh5" path="res://assets/gfx/arena/arena_floor.png" id="2_bxvw6"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://bmmugsn5pb3gr" path="res://assets/gfx/ui/spear.png" id="16_58w7k"]
 [ext_resource type="Texture2D" uid="uid://c1x80ns50ssnh" path="res://assets/gfx/ui/poo.png" id="16_vcwqo"]
 [ext_resource type="Texture2D" uid="uid://3kinm8tyygk7" path="res://assets/gfx/ui/sub_panel2.png" id="17_ptoyv"]
+[ext_resource type="AudioStream" uid="uid://b1t2ycuvbb83c" path="res://assets/sfx/soundtrack/soundtrack.mp3" id="17_v5knx"]
 
 [sub_resource type="Animation" id="Animation_82580"]
 length = 0.001
@@ -713,6 +714,11 @@ grow_vertical = 2
 [node name="quit" type="Button" parent="end/quit"]
 layout_mode = 2
 text = "PODDAJĘ SIĘ"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_v5knx")
+volume_db = -20.0
+autoplay = true
 
 [connection signal="mouse_entered" from="board/kill/button" to="." method="_on_kill_mouse_entered"]
 [connection signal="mouse_exited" from="board/kill/button" to="." method="_on_mouse_exited"]

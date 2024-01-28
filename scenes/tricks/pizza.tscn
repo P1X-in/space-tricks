@@ -1,9 +1,25 @@
-[gd_scene load_steps=10 format=3 uid="uid://3janr5kxf2rf"]
+[gd_scene load_steps=11 format=3 uid="uid://3janr5kxf2rf"]
 
 [ext_resource type="PackedScene" uid="uid://b62avp2rlxbi" path="res://scenes/tricks/trick.tscn" id="1_o1ph2"]
 [ext_resource type="Texture2D" uid="uid://cdioovq8srrv2" path="res://assets/gfx/aliens/telekineza1.png" id="2_yfamp"]
 [ext_resource type="Texture2D" uid="uid://bte6s2tlpecq8" path="res://assets/gfx/aliens/telekineza2.png" id="3_a8npb"]
 [ext_resource type="Texture2D" uid="uid://bt8b27so1wbk7" path="res://assets/gfx/aliens/hawajska.png" id="4_ns8q7"]
+[ext_resource type="AudioStream" uid="uid://d0tk3jg1e311l" path="res://assets/sfx/hawajska.mp3" id="5_isvkn"]
+
+[sub_resource type="Animation" id="Animation_hm21h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Path2D/PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
 [sub_resource type="Animation" id="Animation_pnbah"]
 resource_name = "trick"
@@ -20,21 +36,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 1.0]
-}
-
-[sub_resource type="Animation" id="Animation_hm21h"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Path2D/PathFollow2D:progress_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fu2qw"]
@@ -95,3 +96,6 @@ rotates = false
 [node name="Sprite2D" type="Sprite2D" parent="Path2D/PathFollow2D" index="0"]
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_ns8q7")
+
+[node name="AudioStreamPlayer" parent="." index="3"]
+stream = ExtResource("5_isvkn")

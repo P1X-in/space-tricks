@@ -1,10 +1,50 @@
-[gd_scene load_steps=12 format=3 uid="uid://yb20o2ydk4x2"]
+[gd_scene load_steps=13 format=3 uid="uid://yb20o2ydk4x2"]
 
 [ext_resource type="PackedScene" uid="uid://b62avp2rlxbi" path="res://scenes/tricks/trick.tscn" id="1_kxjoi"]
 [ext_resource type="Texture2D" uid="uid://daluexlff030s" path="res://assets/gfx/grenade.png" id="2_jyopw"]
 [ext_resource type="Texture2D" uid="uid://2emspw7y2s5u" path="res://assets/gfx/aliens/alien1_3.png" id="3_oh88e"]
 [ext_resource type="Texture2D" uid="uid://bmbxk7fks7f5p" path="res://assets/gfx/aliens/alien1_4.png" id="4_mshns"]
 [ext_resource type="Texture2D" uid="uid://davair3cvo1rb" path="res://assets/gfx/paletka.png" id="4_rapht"]
+[ext_resource type="AudioStream" uid="uid://dq4ayxou0lug7" path="res://assets/sfx/tchorz.mp3" id="6_4wp7p"]
+
+[sub_resource type="Animation" id="Animation_6wlr0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pivot:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("pivot2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("pivot3:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
 [sub_resource type="Animation" id="Animation_buacv"]
 resource_name = "trick"
@@ -48,12 +88,18 @@ tracks/2/keys = {
 "values": [0.0, 0.872665, 0.0, -0.872665, 0.0]
 }
 
-[sub_resource type="Animation" id="Animation_6wlr0"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3mxj5"]
+_data = {
+"RESET": SubResource("Animation_6wlr0"),
+"trick": SubResource("Animation_buacv")
+}
+
+[sub_resource type="Animation" id="Animation_bef6m"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("pivot:rotation")
+tracks/0/path = NodePath("pivot3/Sprite2D:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -61,36 +107,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [0.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("pivot2:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("pivot3:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_3mxj5"]
-_data = {
-"RESET": SubResource("Animation_6wlr0"),
-"trick": SubResource("Animation_buacv")
 }
 
 [sub_resource type="Animation" id="Animation_72m61"]
@@ -108,21 +124,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 6.28319]
-}
-
-[sub_resource type="Animation" id="Animation_bef6m"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("pivot3/Sprite2D:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_i5vl4"]
@@ -184,3 +185,6 @@ position = Vector2(0, 100)
 [node name="Sprite2D" type="Sprite2D" parent="pivot3" index="0"]
 position = Vector2(0, -230)
 texture = ExtResource("2_jyopw")
+
+[node name="AudioStreamPlayer" parent="." index="5"]
+stream = ExtResource("6_4wp7p")

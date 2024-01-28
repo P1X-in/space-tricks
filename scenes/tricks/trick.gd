@@ -20,6 +20,7 @@ func get_random_message() -> String:
 	
 func trick() -> void:
 	$"animations".play("trick")
+	$"AudioStreamPlayer".play()
 	
 func reset_state() -> void:
 	$"animations".play("RESET")
