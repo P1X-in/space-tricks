@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://d2x6i14yhj18f"]
+[gd_scene load_steps=7 format=3 uid="uid://d2x6i14yhj18f"]
 
 [ext_resource type="Texture2D" uid="uid://bg4woimvmdhny" path="res://assets/gfx/aliens/alien1_2.png" id="1_qqems"]
 [ext_resource type="PackedScene" uid="uid://b62avp2rlxbi" path="res://scenes/tricks/trick.tscn" id="2_8ieqg"]
+[ext_resource type="AudioStream" uid="uid://7kptjuplbhox" path="res://assets/sfx/helicopter.mp3" id="3_rc48v"]
 
 [sub_resource type="Animation" id="Animation_upew5"]
 length = 0.001
@@ -61,3 +62,6 @@ texture = ExtResource("1_qqems")
 libraries = {
 "": SubResource("AnimationLibrary_3g1pi")
 }
+
+[node name="AudioStreamPlayer" parent="." index="2"]
+stream = ExtResource("3_rc48v")
